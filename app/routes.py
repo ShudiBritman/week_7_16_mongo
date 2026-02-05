@@ -20,3 +20,7 @@ router.get("/top-seniority")
 def top_seniority_employees_excluding_hr():
     return get_top_seniority_employees_excluding_hr()
 
+
+router.get("/age-or-seniority")
+def mployees_by_age_or_seniority():
+    return get_employees_by_age_or_seniority()
