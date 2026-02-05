@@ -1,7 +1,5 @@
 from connection import MongoConnection
-from pprint import pprint
 from utils import serialize_docs
-import os
 
 
 collection = MongoConnection().get_collection()
@@ -42,7 +40,6 @@ def get_managers_excluding_departments():
 
 
 def get_employees_by_lastname_and_age():
-    #query = {'name':{'$or':[{'$regex':'Wright'}, {'$regex':'Nelson'}]}, 'age':{'$lt':35}}
     query = {'$or':[{'name':{'$regex':'Wright$'}}, {'name':{'$regex':'Nelson$'}}], 'age':{'$lt':35}}
     projection = {'name':1, 'age':1, 'job_role.department':1, '_id':0}
     cursor = list(collection.find(query, projection))
