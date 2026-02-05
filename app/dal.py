@@ -33,5 +33,11 @@ def get_employees_by_age_or_seniority():
     return cursor
 
 
+
+def get_managers_excluding_departments():
+    query = {'job_role.title':'Manager', 'job_role.department':{'$nin':['Sales', 'Marketing']}}
+    cursor = list(collection.find(query))
+    return cursor
 # c = collection.find()
 # pprint(list(c))
+pprint(get_managers_excluding_departments())
