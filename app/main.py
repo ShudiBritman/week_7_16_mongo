@@ -14,7 +14,7 @@ async def lifespan():
 
 @app.get("/health")
 async def health():
-    return await {"status": "ok"}
+    return {"status": "ok"}
 
 @app.get("/employees/engineering/high-salary")
 async def engineering_high_salary_employees():
