@@ -12,6 +12,11 @@ def get_engineering_high_salary_employees():
     return cursor
 
 
+def get_employees_by_age_and_role():
+    query = {'age':{'$gte':30, '$lte':45}, 'job_role.title':{'$in':['Engineer', 'Specialist']}}
+    cursor = list(collection.find(query))
+    return cursor
 
 # c = collection.find()
 # pprint(list(c))
+pprint(get_employees_by_age_and_role())
