@@ -10,6 +10,7 @@ COPY app/ /app/
 RUN mkdir -p /data
 
 COPY data/ /data/
+#COPY data/ /data/
 
 EXPOSE 8000
 
