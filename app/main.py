@@ -32,7 +32,7 @@ async def top_seniority_employees_excluding_hr():
 
 
 @app.get("/employees/age-or-seniority")
-async def mployees_by_age_or_seniority():
+async def employees_by_age_or_seniority():
     return get_employees_by_age_or_seniority()
 
 

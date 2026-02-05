@@ -25,7 +25,7 @@ spec:
               value: rootpassword
           volumeMounts:
             - name: mongo-data
-              mountPath: /data
+              mountPath: /data/db
   volumeClaimTemplates:
     - metadata:
         name: mongo-data

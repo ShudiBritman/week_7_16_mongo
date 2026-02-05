@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app
+  name: api
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: app
+      app: api
   template:
     metadata:
       labels:
-        app: app
+        app: api
     spec:
       containers:
-        - name: app
+        - name: api
           image: sdbr1234/api-mongo-employees:1.0
           ports:
             - containerPort: 8000
