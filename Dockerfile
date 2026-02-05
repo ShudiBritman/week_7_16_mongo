@@ -10,7 +10,7 @@ COPY app/ /app/
 RUN mkdir -p /data
 
 COPY data/ /data/
-#COPY data/ /data/
+#כששמים '/' לפני התיקיה זה אומר שהיא נמצאת בroot 
 
 EXPOSE 8000
 
