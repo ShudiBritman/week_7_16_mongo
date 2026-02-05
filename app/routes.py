@@ -26,6 +26,10 @@ def mployees_by_age_or_seniority():
     return get_employees_by_age_or_seniority()
 
 
-router.get("managers/excluding-departments")
+router.get("/managers/excluding-departments")
 def managers_excluding_departments():
     return get_managers_excluding_departments()
+
+router.get("/by-lastname-and-age")
+def employees_by_lastname_and_age():
+    return get_employees_by_lastname_and_age()
