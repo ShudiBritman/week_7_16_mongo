@@ -18,12 +18,12 @@ async def health():
 
 @app.get("/employees/engineering/high-salary")
 async def engineering_high_salary_employees():
-    return engineering_high_salary_employees()
+    return  get_engineering_high_salary_employees()
 
 
 @app.get("/employees/by-age-and-role")
 async def employees_by_age_and_role():
-    return employees_by_age_and_role()
+    return get_employees_by_age_and_role()
 
 
 @app.get("/employees/top-seniority")
