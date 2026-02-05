@@ -52,3 +52,11 @@ class MongoConnection:
     def get_client(self):
         return self.client
 
+    def get_db(self):
+        db_name = os.getenv("MONGO_DB", "employees")
+        client = self.get_client()
+        return client[db_name]
+
+    def get_collection(self, collection_name: str):
+        db = self.get_db()
+        return db[collection_name]
