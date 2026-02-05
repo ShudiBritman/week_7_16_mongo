@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: api
-          image: sdbr1234/api-mongo-employees:1.0
+          image: sdbr1234/api-mongo-employees:2.0
           ports:
             - containerPort: 8000
           env:
