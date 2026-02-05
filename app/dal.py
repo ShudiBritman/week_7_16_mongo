@@ -17,6 +17,15 @@ def get_employees_by_age_and_role():
     cursor = list(collection.find(query))
     return cursor
 
+
+
+def get_top_seniority_employees_excluding_hr():
+    query = {'job_role.title':{'$nin':['HR']}}
+    cursor = list(collection.find(query).limit(7).sort({'years_at_company':-1}))
+    return cursor
+
+
+
+
 # c = collection.find()
 # pprint(list(c))
-pprint(get_employees_by_age_and_role())
