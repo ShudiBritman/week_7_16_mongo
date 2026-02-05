@@ -1,5 +1,6 @@
 from connection import MongoConnection
 from pprint import pprint
+from utils import serialize_docs
 import os
 
 
@@ -15,15 +16,14 @@ def get_engineering_high_salary_employees():
 def get_employees_by_age_and_role():
     query = {'age':{'$gte':30, '$lte':45}, 'job_role.title':{'$in':['Engineer', 'Specialist']}}
     cursor = list(collection.find(query))
-    return cursor
+    return serialize_docs(cursor)
 
 
 
 def get_top_seniority_employees_excluding_hr():
     query = {'job_role.title':{'$nin':['HR']}}
     cursor = list(collection.find(query).limit(7).sort({'years_at_company':-1}))
-    return cursor
-
+    return serialize_docs(cursor)
 
 
 def get_employees_by_age_or_seniority():
@@ -37,7 +37,7 @@ def get_employees_by_age_or_seniority():
 def get_managers_excluding_departments():
     query = {'job_role.title':'Manager', 'job_role.department':{'$nin':['Sales', 'Marketing']}}
     cursor = list(collection.find(query))
-    return cursor
+    return serialize_docs(cursor)
 
 
 
