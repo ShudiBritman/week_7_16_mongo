@@ -29,7 +29,7 @@ class MongoConnection:
         return cls._instance
 
     @staticmethod
-    def connect_with_retry():
+    def _connect_with_retry():
         uri = build_mongo_uri()
         retries = 10
         delay = 3
@@ -57,6 +57,6 @@ class MongoConnection:
         client = self.get_client()
         return client[db_name]
 
-    def get_collection(self, collection_name: str):
+    def get_collection(self):
         db = self.get_db()
-        return db[collection_name]
+        return db["employees_col"]
