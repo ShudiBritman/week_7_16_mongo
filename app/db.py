@@ -2,7 +2,7 @@ from connection import MongoConnection
 import json
 
 
-PATH = '../data'
+PATH = '../data/'
 
 def init_db():
     col = MongoConnection().get_collection('employees')
