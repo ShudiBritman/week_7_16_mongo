@@ -14,3 +14,9 @@ def engineering_high_salary_employees():
 router.get("/by-age-and-role")
 def employees_by_age_and_role():
     return employees_by_age_and_role()
+
+
+router.get("/top-seniority")
+def top_seniority_employees_excluding_hr():
+    return get_top_seniority_employees_excluding_hr()
+
