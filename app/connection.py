@@ -52,6 +52,3 @@ class MongoConnection:
     def get_client(self):
         return self.client
 
-
-
-#https://sandbox.redhat.com/?intcmp=7013a0000026GZMAA2
