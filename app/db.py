@@ -1,5 +1,4 @@
 from connection import MongoConnection
-import os
 import json
 
 
