@@ -8,7 +8,6 @@ def get_engineering_high_salary_employees():
     query = {'salary':{'$gt': 65000}, 'job_role.title':'Engineer'}
     projection = {'employee_id':1, 'name':1, 'salary':1, '_id':0}
     cursor = list(collection.find(query, projection))
-    print(cursor)
     return cursor
 
 
