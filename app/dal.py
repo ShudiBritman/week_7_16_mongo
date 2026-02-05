@@ -38,6 +38,12 @@ def get_managers_excluding_departments():
     query = {'job_role.title':'Manager', 'job_role.department':{'$nin':['Sales', 'Marketing']}}
     cursor = list(collection.find(query))
     return cursor
-# c = collection.find()
-# pprint(list(c))
-pprint(get_managers_excluding_departments())
+
+
+
+def get_employees_by_lastname_and_age():
+    #query = {'name':{'$or':[{'$regex':'Wright'}, {'$regex':'Nelson'}]}, 'age':{'$lt':35}}
+    query = {'$or':[{'name':{'$regex':'Wright$'}}, {'name':{'$regex':'Nelson$'}}], 'age':{'$lt':35}}
+    projection = {'name':1, 'age':1, 'job_role.department':1, '_id':0}
+    cursor = list(collection.find(query, projection))
+    return cursor
