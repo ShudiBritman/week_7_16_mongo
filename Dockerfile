@@ -2,11 +2,15 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-COPY requirements.txt .
+COPY requirements.txt /app/
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY app/ .
-COPY data/ data/.
+COPY app/ /app/
+
+RUN mkdir -p /data
+
+COPY data/ /data/
+#כששמים '/' לפני התיקיה זה אומר שהיא נמצאת בroot 
 
 EXPOSE 8000
 
